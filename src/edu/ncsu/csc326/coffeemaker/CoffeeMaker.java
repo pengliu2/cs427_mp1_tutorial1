@@ -67,7 +67,43 @@ public class CoffeeMaker {
 	    inventory.addSugar(amtSugar);
 	    inventory.addChocolate(amtChocolate);
     }
-    
+
+    /**
+     * Add amt of milk to inventory
+     * @param amt
+     * @return void
+     */
+    public synchronized void addMilk(String amt) throws InventoryException {
+	    inventory.addMilk(amt);
+    }
+
+    /**
+     * Add amt of sugar to inventory
+     * @param amt
+     * @return void
+     */
+    public synchronized void addSugar(String amt) throws InventoryException {
+	    inventory.addSugar(amt);
+    }
+
+    /**
+     * Add amt of chocolate to inventory
+     * @param amtCoffee
+     * @return void
+     */
+    public synchronized void addChocolate(String amt) throws InventoryException {
+	    inventory.addChocolate(amt);
+    }
+
+    /**
+     * Add amtCoffee of coffee to inventory
+     * @param amtCoffee
+     * @return void
+     */
+    public synchronized void addCoffee(String amtCoffee) throws InventoryException {
+	    inventory.addCoffee(amtCoffee);
+    }
+
     /**
      * Returns the inventory of the coffee maker
      * @return Inventory
