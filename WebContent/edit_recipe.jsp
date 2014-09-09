@@ -47,6 +47,11 @@
 		Integer recipeNum = Integer.parseInt(value);
 		session.setAttribute("recipeNum", recipeNum);
 		String name = cm.getRecipes()[recipeNum].getName();
+		int oldprice = cm.getRecipes()[recipeNum].getPrice();
+		int coffee = cm.getRecipes()[recipeNum].getAmtCoffee();
+		int milk = cm.getRecipes()[recipeNum].getAmtMilk();
+		int sugar = cm.getRecipes()[recipeNum].getAmtSugar();
+		int chocolate = cm.getRecipes()[recipeNum].getAmtChocolate();
 		if (cm.getRecipes()[recipeNum] != null) {
 			out.println("<span class=\"font_success\">Editing recipe: " + name + "</span><br>");
 				
@@ -54,19 +59,19 @@
 <form method="post" action="edit_recipe.jsp">
 <table>
 <tr>
-<td><input type="text" name="price"></td><td><span class="font1">Recipe Price (integer)</span></td>
+<td><input type="text" name="price" value=<%=oldprice %>></td><td><span class="font1">Recipe Price (integer)</span></td>
 </tr>
 <tr>
-<td><input type="text" name="amtCoffee"></td><td><span class="font1">Units Coffee</span></td>
+<td><input type="text" name="amtCoffee" value=<%=coffee %>></td><td><span class="font1">Units Coffee</span></td>
 </tr>
 <tr>
-<td><input type="text" name="amtMilk"></td><td><span class="font1">Units Milk</span></td>
+<td><input type="text" name="amtMilk" value=<%=milk %>></td><td><span class="font1">Units Milk</span></td>
 </tr>
 <tr>
-<td><input type="text" name="amtSugar"></td><td><span class="font1">Units Sugar</span></td>
+<td><input type="text" name="amtSugar" value=<%=sugar %>></td><td><span class="font1">Units Sugar</span></td>
 </tr>
 <tr>
-<td><input type="text" name="amtChocolate"></td><td><span class="font1">Units Chocolate</span></td>
+<td><input type="text" name="amtChocolate" value=<%=chocolate %>></td><td><span class="font1">Units Chocolate</span></td>
 </tr>
 </table>
 <input type="submit" value="Edit Recipe!">
